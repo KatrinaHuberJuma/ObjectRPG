@@ -5,9 +5,7 @@ public class Human {
 	public int intelligence;
 	public int strength;
 	public int health;
-	public void displayStats() {
-		System.out.println(this.name +" strenth: "+ this.strength +" health "+ this.health);
-	}
+	
 	public Human(String name) {
 		this.intelligence = 3;
 		this.stealth = 3;
@@ -15,15 +13,18 @@ public class Human {
 		this.health = 100;
 		this.name = name;
 		System.out.println("Human object made");
-		this.displayStats();
+		System.out.println(this.displayStats());
+	}
+	public String displayStats() {
+		return this.name +" strength: "+ this.strength +" intelligence "+ this.intelligence +" health "+ this.health;
 	}
 	
 	public void attack(Human enemy) {
-		enemy.displayStats();
+		System.out.println(enemy.displayStats());
 		System.out.println(this.name + " attacked "+ enemy.name + "!!!");
 		enemy.health -= this.strength;
-		this.displayStats();
-		enemy.displayStats();
+		System.out.println(this.displayStats());
+		System.out.println(enemy.displayStats());
 	}
 	
 
